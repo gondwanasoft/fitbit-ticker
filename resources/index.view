@@ -1,0 +1,17 @@
+<!-- This file is not a part of the widget template. It demonstrates how to use the sample widget code.-->
+<svg>
+  <use id='myTicker' href='#ticker-text' y='100' width='100%-100' height='80' >
+    <rect width='100%' height='100%' fill='blue' opacity='0.3'/>  <!-- You won't normally want to do this; it just shows the ticker's bounds -->
+    <set href="text" attributeName="text-buffer" to="Text set in view." />
+    <set href="text" attributeName="text-anchor" to="end" />
+    <set href="config" attributeName="text-buffer" to="gap: 10; speed: 50; repeatCount: 3;" />
+  </use>
+
+  <!-- Reference implementation for comparison: -->
+  <use id="marquee" href="#marquee-text" font-size="32" x='50' y="200" width="100%-100" height="80" fill="white" mode="0" >
+    <set href="group/text" attributeName="text-buffer" to="The quick brown fox." />
+    <set href="group/separator" attributeName="width" to="150" />
+  </use>
+
+  <rect id='touch' width='100%' height='100%' fill='none' pointer-events='visible' />
+</svg>

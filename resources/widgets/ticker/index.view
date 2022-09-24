@@ -1,0 +1,14 @@
+<defs>
+  <link rel="stylesheet" href="styles.css" />
+
+  <symbol id="ticker-text" x="0" y="0" type="ticker" overflow='hidden' focusable='false' pointer-events='none' system-events='all' data-size='16'>
+    <text id="text" class='ticker-text' >
+      <animate id='ani' attributeName="x" />
+    </text>
+    <text id="copy" class='ticker-text' >
+      <animate id='ani' attributeName="x" />
+    </text>
+
+    <text id="config" display="none" text-length="60"/>
+  </symbol>
+</defs>

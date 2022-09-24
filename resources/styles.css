@@ -1,0 +1,14 @@
+/* This file is not a part of the widget template. It demonstrates how to use the sample widget code. */
+
+#myTicker {
+  x: 50;
+  fill: green;
+}
+
+#myTicker text {
+  text-buffer: "Text set in style.";
+}
+
+#myTicker .ticker-text {
+  font-size: 60;
+}

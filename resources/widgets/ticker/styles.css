@@ -1,0 +1,18 @@
+/* It should be possible to over-ride these defaults in your own resources/styles.css */
+
+.ticker-text {
+  height: 100%;
+  fill: inherit;
+  fill-opacity: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+  text-length: 120;
+}
+
+.ticker-text #ani {
+  begin: enable;
+  end: disable;
+  final: keep;
+  repeatCount: indefinite;
+}
