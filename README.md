@@ -17,7 +17,7 @@ In your `resources/widget.defs`, include:
 In your `app/index.js`, include:
 > `import './widgets/ticker'`
 
-You don't need to include any of the other files from this repository in your project; they're just for documentation.
+You don't need to include any of the other files from this repository in your project; they're just documentation and usage examples.
 
 ## Usage
 
@@ -25,18 +25,18 @@ You don't need to include any of the other files from this repository in your pr
 
 In your `resources/index.view`, declare `<use>` elements for all instances of the ticker symbol that you need. See the sample `resources/index.view` for an example.
 
-Initialise ticker element attributes. Standard `GraphicsElement` attributes (x, fill, *etc*) should work normally.
+Initialise ticker element attributes. Standard `GraphicsElement` attributes (`x`, `fill`, *etc*) should work normally.
 
 You can initialise some ticker sub-elements with `<use>` (see the sample). Sub-elements include:
 
 * `text`: attributes are:
-  * `text-buffer`: message to display; same as `marquee-text text`
-  * `text-anchor`: if text is short enough to fit within the `<use>` element, it will not scroll and will be aligned according to this attribute. Options are `start`, `middle`, `end`. This has no effect if text needs to scroll.
+  * `text-buffer`: message to display; same as `marquee-text text`. Default: `''`.
+  * `text-anchor`: if text is short enough to fit within the `<use>` element, it will not scroll and will be aligned according to this attribute. Options are `start`, `middle`, `end`. This has no effect if text needs to scroll. Default: `start`.
 * `config`: a non-visible text element that can be used to specify non-standard attributes. Options are:
-  * `gap`: distance (pixels) between repeats of the text; same as `marquee-text separator`
-  * `speed`: scroll speed (pixels/second); equivalent to `marquee-text value`
-  * `enabled`: whether text will initially scroll if needed; equivalent to `marquee-text mode`
-  * `repeatCount`: how many times to scroll (Number or 'indefinite').
+  * `gap`: distance (pixels) between repeats of the text; same as `marquee-text separator`. Default: 87.
+  * `speed`: scroll speed (pixels/second); equivalent to `marquee-text value`. Default: 120.
+  * `enabled`: whether text will initially scroll if needed; equivalent to `marquee-text mode`. Default: `true`.
+  * `repeatCount`: how many times to scroll (Number or `indefinite`). Default: `indefinite`.
 
 ### CSS
 
@@ -59,7 +59,7 @@ Ticker element object properties:
 
 Ticker element object methods:
 
-* `changeWidth(newWidth)`: set new .width on ticker element and reassess whether text needs to scroll.
+* `changeWidth(newWidth)`: set new `.width` on ticker element and reassess whether text needs to scroll.
 
 See the sample `app/index.js` for examples.
 
@@ -73,6 +73,6 @@ If scrolling is stopped, it can't be resumed from its current position. It will 
 
 Changing text, gap, speed and width will restart scrolling (if required) from its initial position, rather than continuing from its current position.
 
-This probably won't work if placed within a `<g>` and rotated, due to a quirk in TextElement.getBBox().
+This probably won't work if placed within a `<g>` and rotated, due to a quirk in `TextElement.getBBox()`.
 
 `onanimationstart`, *etc*, may not work in some SDK versions.
